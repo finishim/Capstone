@@ -5,6 +5,10 @@
 ## how it relates to the data science process you have learned in the Data Science Specialization.
 
 library(stringi)
+library(rJava)
+library(NLP)
+library(openNLP)
+library(RWeka)
 
 url_train <- "https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip"
 
