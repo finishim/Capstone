@@ -106,3 +106,12 @@ subLineBlogs <- lineBlogs[index]
 
 #Convert into String
 sSubLineBlogs <- as.String(subLineBlogs)
+
+#Annotate the Sampled Text
+word_ann <- Maxent_Word_Token_Annotator()
+sent_ann <- Maxent_Sent_Token_Annotator()
+blog_annotations <- annotate(sSubLineBlogs, list(sent_ann, word_ann))
+blog_doc <- AnnotatedPlainTextDocument(bio, bio_annotations)
+
+#First few words
+words(blog_doc) %>% head(10)
