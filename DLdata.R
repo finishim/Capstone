@@ -1,4 +1,4 @@
-#Tasks to accomplish
+#Tasks to accomplish - Week 1
 
 ## 1. Obtaining the data - Can you download the data and load/manipulate it in R?
 ## 2. Familiarizing yourself with NLP and text mining - Learn about the basics of natural language processing and 
@@ -9,6 +9,8 @@ library(rJava)
 library(NLP)
 library(openNLP)
 library(RWeka)
+library(magrittr)
+#(source on libraries to use: https://rpubs.com/lmullen/nlp-chapter)
 
 url_train <- "https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip"
 
@@ -84,31 +86,23 @@ sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for
 length(sentenceTwitter)
 #3
 
-#Questions to consider Week 1
-
 ##What do the data look like?
 
 head(lineTwitter)
 head(lineNews)
 head(lineBlogs)
 
-##Where do the data come from?
-##Can you think of any other data sources that might help you in this project?
-##What are the common steps in natural language processing?
-##What are some common issues in the analysis of text data?
-##What is the relationship between NLP and the concepts you have learned in the Specialization?
-
-#Tasks to accomplish
+#Tasks to accomplish - Week 2
 
 ## 1. Exploratory analysis - perform a thorough exploratory analysis of the data, understanding the distribution
 ## of words and relationship between the words in the corpora.
 ## 2. Understand frequencies of words and word pairs - build figures and tables to understand variation in the 
 ## frequencies of words and word pairs in the data.
 
-#Questions to consider Week 2
+#Random Sampling of the Large Files
+index <- sample(1:length(lineBlogs),50000)
+subLineBlogs <- lineBlogs[index]
+#source for random sampling: http://www.dummies.com/programming/r/how-to-take-samples-from-data-in-r/
 
-##Some words are more frequent than others - what are the distributions of word frequencies?
-##What are the frequencies of 2-grams and 3-grams in the dataset?
-##How many unique words do you need in a frequency sorted dictionary to cover 50% of all word instances in the language? 90%?
-##How do you evaluate how many of the words come from foreign languages?
-##Can you think of a way to increase the coverage -- identifying words that may not be in the corpora or using a smaller number of words in the dictionary to cover the same number of phrases?
+#Convert into String
+sSubLineBlogs <- as.String(subLineBlogs)
