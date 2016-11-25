@@ -30,6 +30,61 @@ readLines(con, 1) ## Read the next line of text
 readLines(con, 5) ## Read in the next 5 lines of text 
 close(con) ## It's important to close the connection when you are done
 
+#quiz question 2
+
+twitter <- readLines(con <- file("./en_US.twitter.txt", "r"))
+close(con)
+length(twitter)
+#answer: 2360148
+
+#quiz question 3
+
+fileName="en_US.blogs.txt"
+con=file(fileName,open="r")
+lineBlogs=readLines(con) 
+close(con)
+
+fileName="en_US.news.txt"
+con=file(fileName,open="r")
+lineNews=readLines(con) 
+close(con)
+
+fileName="en_US.twitter.txt"
+con=file(fileName,open="r")
+lineTwitter=readLines(con)
+close(con)
+
+#require(stringi)
+lenBlogs<-stri_length(lineBlogs)
+max(longBlogs)
+lenNews<-stri_length(lineNews)
+max(longNews)
+lenTwitter<-stri_length(lineTwitter)
+max(longTwitter)
+
+#quiz question 4
+
+#Word "love"
+loveTwitter<-grep("love",lineTwitter)
+length(loveTwitter)
+#Word "hate"
+hateTwitter<-grep("hate",lineTwitter)
+length(hateTwitter)
+#Divide love by hate
+90956/22138
+
+#quiz question 5
+
+biostatsTwitter<-grep("biostats",lineTwitter)
+lineTwitter[biostatsTwitter]
+
+
+#quiz question 6
+
+sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for me at kickboxing",lineTwitter)
+length(sentenceTwitter)
+#3
+
 #Questions to consider
 
 ##What do the data look like?
