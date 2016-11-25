@@ -4,6 +4,8 @@
 ## 2. Familiarizing yourself with NLP and text mining - Learn about the basics of natural language processing and 
 ## how it relates to the data science process you have learned in the Data Science Specialization.
 
+library(stringi)
+
 url_train <- "https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip"
 
 if(!file.exists('en_US.blogs.txt')){
