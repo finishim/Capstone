@@ -25,13 +25,6 @@ if(!file.exists('en_US.blogs.txt')){
     file.copy(flist, ".\\")
 }
 
-#establish a connection to file to read lines
-con <- file("en_US.twitter.txt", "r")
-readLines(con, 1) ## Read the first line of text 
-readLines(con, 1) ## Read the next line of text 
-readLines(con, 5) ## Read in the next 5 lines of text 
-close(con) ## It's important to close the connection when you are done
-
 #quiz question 2
 
 twitter <- readLines(con <- file("./en_US.twitter.txt", "r"))
@@ -87,11 +80,31 @@ sentenceTwitter<-grep("A computer once beat me at chess, but it was no match for
 length(sentenceTwitter)
 #3
 
-#Questions to consider
+#Questions to consider Week 1
 
 ##What do the data look like?
+
+head(lineTwitter)
+head(lineNews)
+head(lineBlogs)
+
 ##Where do the data come from?
 ##Can you think of any other data sources that might help you in this project?
 ##What are the common steps in natural language processing?
 ##What are some common issues in the analysis of text data?
 ##What is the relationship between NLP and the concepts you have learned in the Specialization?
+
+#Tasks to accomplish
+
+## 1. Exploratory analysis - perform a thorough exploratory analysis of the data, understanding the distribution
+## of words and relationship between the words in the corpora.
+## 2. Understand frequencies of words and word pairs - build figures and tables to understand variation in the 
+## frequencies of words and word pairs in the data.
+
+#Questions to consider Week 2
+
+##Some words are more frequent than others - what are the distributions of word frequencies?
+##What are the frequencies of 2-grams and 3-grams in the dataset?
+##How many unique words do you need in a frequency sorted dictionary to cover 50% of all word instances in the language? 90%?
+##How do you evaluate how many of the words come from foreign languages?
+##Can you think of a way to increase the coverage -- identifying words that may not be in the corpora or using a smaller number of words in the dictionary to cover the same number of phrases?
